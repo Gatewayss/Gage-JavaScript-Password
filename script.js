@@ -27,6 +27,12 @@ function generatePassword() {
   } else {
     passwordUpperCase = console.log("no to uppercase")
   }
+
+  if (passwordNumbers === true) {
+    passwordNumbers = console.log("yes to numbers")
+  } else {
+    passwordNumbers = console.log("no to numbers")
+  }
 }
 generatePassword()
 
