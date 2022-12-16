@@ -16,10 +16,16 @@ function generatePassword() {
     console.log(parsePasswordLength)
   } 
 
-  if (confirm("Would you like lower case characters in your password??") == true) {
+  if (passwordLowerCase === true) {
     lowerCasePreference = console.log("yes to lowercase")
   } else {
     lowerCasePreference = console.log("no to lowercase")
+  }
+
+  if (passwordUpperCase === true) {
+    passwordUpperCase = console.log("yes to uppercase")
+  } else {
+    passwordUpperCase = console.log("no to uppercase")
   }
 }
 generatePassword()
