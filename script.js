@@ -1,6 +1,10 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+const passwordLength = prompt("How many characters would you like your password to be?")
+const passwordLowerCase = confirm("Would you like lower case characters in your password??")
+const passwordUpperCase = confirm("Would you like uppercase characters in your password?")
+const passwordNumbers = confirm("Would you like number in your password?")
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
