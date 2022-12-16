@@ -11,8 +11,8 @@ let passwordNumbers = confirm("Would you like number in your password?")
 // Write password to the #password input
 function generatePassword() {
   if (parsePasswordLength < 7 || parsePasswordLength > 129) {
-    console.log("Quit")
-  } else if (parsePasswordLength > 7 && parsePasswordLength < 129) {
+    console.log("try again")
+  } else {
     console.log(parsePasswordLength)
   } 
 
