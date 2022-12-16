@@ -6,6 +6,16 @@ let passwordLowerCase = confirm("Would you like lower case characters in your pa
 let passwordUpperCase = confirm("Would you like uppercase characters in your password?")
 let passwordNumbers = confirm("Would you like number in your password?")
 // Write password to the #password input
+function generatePassword() {
+  Number(passwordLength)
+  if (passwordLength < 9 && passwordLength < 124) {
+    console.log("cool")
+  }
+}
+
+console.log(typeof passwordLength)
+
+
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
