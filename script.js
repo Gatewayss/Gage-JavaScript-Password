@@ -4,6 +4,7 @@ var generateBtn = document.querySelector("#generate");
 let passwordLength = prompt("How many characters would you like your password to be?")
 let parsePasswordLength = parseInt(passwordLength)
 let passwordLowerCase = confirm("Would you like lower case characters in your password??")
+let lowerCasePreference;
 let passwordUpperCase = confirm("Would you like uppercase characters in your password?")
 let passwordNumbers = confirm("Would you like number in your password?")
 
@@ -13,6 +14,12 @@ function generatePassword() {
     console.log("Quit")
   } else if (parsePasswordLength > 7 && parsePasswordLength < 129) {
     console.log(parsePasswordLength)
+  } 
+
+  if (confirm("Would you like lower case characters in your password??") == true) {
+    lowerCasePreference = console.log("yes to lowercase")
+  } else {
+    lowerCasePreference = console.log("no to lowercase")
   }
 }
 generatePassword()
