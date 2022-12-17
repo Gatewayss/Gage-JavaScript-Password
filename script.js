@@ -7,6 +7,8 @@ let passwordLowerCase = confirm("Would you like lower case characters in your pa
 let lowerCasePreference;
 let passwordUpperCase = confirm("Would you like uppercase characters in your password?")
 let passwordNumbers = confirm("Would you like number in your password?")
+let specialCharactersPreference = confirm("Would you like to add special characters?")
+
 let options = []
 let newArray = []
 let lowercaseArray = [...'abcdefghijklmnopqrstuvwxyz']
@@ -34,12 +36,20 @@ function generatePassword() {
     passwordNumbers = console.log(options)
   } else {
     passwordNumbers = console.log("no to numbers")
+  } 
+
+  if (specialCharactersPreference) {
+    options = options.concat(specialCharactersArray)
+    specialCharactersPreference = console.log(options);
+  } else {
+    specialCharactersPreference = console.log("no to special characters")
   }
+
   if (parsePasswordLength < 7 || parsePasswordLength > 129) {
     console.log("try again")
   } else {
     for (let i = 0; i < parsePasswordLength; i++) {
-      newArray.push(options[Math.floor(Math.random() * (61 - 0))])
+      newArray.push(options[Math.floor(Math.random() * (90 - 0))])
       console.log(newArray)
     }
   }
