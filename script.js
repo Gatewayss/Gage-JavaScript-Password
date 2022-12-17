@@ -9,9 +9,11 @@ let passwordUpperCase = confirm("Would you like uppercase characters in your pas
 let passwordNumbers = confirm("Would you like number in your password?")
 let options = []
 let newArray = []
-let lowercaseArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
-let uppercaseArray = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
-let numberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+let lowercaseArray = [...'abcdefghijklmnopqrstuvwxyz']
+let uppercaseArray = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ']
+let numberArray = [1,2,3,4,5,6,7,8,9]
+let specialCharactersArray = [..."!#$%&'()*+,-./:;<=>?@[^_`{|}~"]
+console.log(specialCharactersArray)
 // Write password to the #password input
 function generatePassword() {
   if (passwordLowerCase === true) {
@@ -37,7 +39,7 @@ function generatePassword() {
     console.log("try again")
   } else {
     for (let i = 0; i < parsePasswordLength; i++) {
-      newArray.push(options[Math.floor(Math.random() * (28 - 0))])
+      newArray.push(options[Math.floor(Math.random() * (61 - 0))])
       console.log(newArray)
     }
   }
