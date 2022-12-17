@@ -15,7 +15,7 @@ let lowercaseArray = [...'abcdefghijklmnopqrstuvwxyz']
 let uppercaseArray = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ']
 let numberArray = [1,2,3,4,5,6,7,8,9]
 let specialCharactersArray = [..."!#$%&'()*+,-./:;<=>?@[^_`{|}~"]
-console.log(specialCharactersArray)
+
 // Write password to the #password input
 function generatePassword() {
   if (passwordLowerCase === true) {
@@ -67,7 +67,7 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword)
 
 /* todo:
 
@@ -78,4 +78,12 @@ prompt to use uppercase
 prompt to use numbers and or special characters
 once all the prompts are done a password should generate 
 it can be displayed as alert or in the text box 
+
+todo part 2:
+
+create a quit function if they don't enter the correct amount of characters
+store the new password in a variable that can be used outside of the generate password function.
+make the outcome a string 
+add that variable to the click function so it displays on screen 
+clean and test the code 
 */
