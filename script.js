@@ -34,10 +34,6 @@ let specialCharactersArray = [..."!#$%&'()*+,-./:;<=>?@[^_`{|}~"]
 
 // Write password to the #password input
 function generatePassword() {
-  if (parsePasswordLength < 8 || parsePasswordLength > 129) {
-    alert("try again")
-
-  }
   if (passwordLowerCase === true) {
     options = options.concat(lowercaseArray)
     console.log(options)
