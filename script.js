@@ -2,22 +2,44 @@
 var generateBtn = document.querySelector("#generate");
 
 let passwordLength = prompt("How many characters would you like your password to be?")
+
 let parsePasswordLength = parseInt(passwordLength)
-let passwordLowerCase = confirm("Would you like lower case characters in your password??")
+let passwordLowerCase;
 let lowerCasePreference;
-let passwordUpperCase = confirm("Would you like uppercase characters in your password?")
-let passwordNumbers = confirm("Would you like number in your password?")
-let specialCharactersPreference = confirm("Would you like to add special characters?")
+let passwordUpperCase;
+let passwordNumbers;
+let specialCharactersPreference;
+let isCorrect = false;
+isCorrect = checkLength(parsePasswordLength, isCorrect);
+if (isCorrect) {
+  displayPrompts();
+}
 
 let options = []
 let newArray = []
 let lowercaseArray = [...'abcdefghijklmnopqrstuvwxyz']
 let uppercaseArray = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ']
-let numberArray = [1,2,3,4,5,6,7,8,9]
+let numberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 let specialCharactersArray = [..."!#$%&'()*+,-./:;<=>?@[^_`{|}~"]
+
+
+function checkLength(parsePasswordLength, isCorrect) {
+  if (parsePasswordLength < 8 || parsePasswordLength > 129) {
+    alert("try again")
+    isCorrect = false;
+
+  } else {
+    isCorrect = true;
+  }
+  return isCorrect;
+}
 
 // Write password to the #password input
 function generatePassword() {
+  if (parsePasswordLength < 8 || parsePasswordLength > 129) {
+    alert("try again")
+
+  }
   if (passwordLowerCase === true) {
     options = options.concat(lowercaseArray)
     console.log(options)
@@ -36,7 +58,7 @@ function generatePassword() {
     passwordNumbers = console.log(options)
   } else {
     passwordNumbers = console.log("no to numbers")
-  } 
+  }
 
   if (specialCharactersPreference) {
     options = options.concat(specialCharactersArray)
@@ -44,19 +66,16 @@ function generatePassword() {
   } else {
     specialCharactersPreference = console.log("no to special characters")
   }
-
-  if (parsePasswordLength < 7 || parsePasswordLength > 129) {
-    console.log("try again")
+  console.log(parsePasswordLength);
+  if (parsePasswordLength < 8 || parsePasswordLength > 129) {
+    alert("try again")
   } else {
     for (let i = 0; i < parsePasswordLength; i++) {
-      newArray.push(options[Math.floor(Math.random() * (90 - 0))])
-      console.log(newArray)
+      newArray.push(options[Math.floor(Math.random() * (90 - 0))]);
     }
+    return (newArray.join('').toString());
   }
 }
-
-generatePassword()
-
 
 function writePassword() {
   var password = generatePassword();
@@ -67,7 +86,16 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword)
+generateBtn.addEventListener("click", writePassword); {
+  console.log("clicked");
+}
+
+function displayPrompts() {
+  passwordLowerCase = confirm("Would you like lower case characters in your password??")
+  passwordUpperCase = confirm("Would you like uppercase characters in your password?")
+  passwordNumbers = confirm("Would you like number in your password?")
+  specialCharactersPreference = confirm("Would you like to add special characters?")
+}
 
 /* todo:
 
