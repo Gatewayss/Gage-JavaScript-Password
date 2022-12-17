@@ -2,17 +2,27 @@
 var generateBtn = document.querySelector("#generate");
 
 let passwordLength = prompt("How many characters would you like your password to be?")
-
 let parsePasswordLength = parseInt(passwordLength)
-let passwordLowerCase;
+
 let lowerCasePreference;
 let passwordUpperCase;
 let passwordNumbers;
 let specialCharactersPreference;
-let isCorrect = false;
-isCorrect = checkLength(parsePasswordLength, isCorrect);
-if (isCorrect) {
+
+let isCorrectLength = false;
+isCorrectLength = checkLength(parsePasswordLength, isCorrectLength);
+if (isCorrectLength) {
   displayPrompts();
+}
+
+function checkLength(parsePasswordLength, isCorrectLength) {
+  if (parsePasswordLength < 8 || parsePasswordLength > 129) {
+    alert("Refresh browser and try again! password length must be min 8 or max 129 characters")
+    isCorrectLength = false;
+  } else {
+    isCorrectLength = true;
+  }
+  return isCorrectLength;
 }
 
 let options = []
@@ -21,18 +31,6 @@ let lowercaseArray = [...'abcdefghijklmnopqrstuvwxyz']
 let uppercaseArray = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ']
 let numberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 let specialCharactersArray = [..."!#$%&'()*+,-./:;<=>?@[^_`{|}~"]
-
-
-function checkLength(parsePasswordLength, isCorrect) {
-  if (parsePasswordLength < 8 || parsePasswordLength > 129) {
-    alert("try again")
-    isCorrect = false;
-
-  } else {
-    isCorrect = true;
-  }
-  return isCorrect;
-}
 
 // Write password to the #password input
 function generatePassword() {
