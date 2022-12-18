@@ -65,7 +65,7 @@ function generatePassword() {
   } else {
     specialCharactersPreference = console.log("no to special characters")
   }
-  
+
   if (parsePasswordLength) {
     for (let i = 0; i < parsePasswordLength; i++) {
       newPasswordArray.push(characterOptions[Math.floor(Math.random() * characterOptions.length)]);
@@ -112,4 +112,13 @@ store the new password in a variable that can be used outside of the generate pa
 make the outcome a string 
 add that variable to the click function so it displays on screen 
 clean and test the code 
+
+todo part 3
+
+watch demo on zoom and compare,
+when the button is clicked THEN the prompts begin,
+ensure each type of character is in the password,
+make a function where the user has to pick at least one 
+of the options for characters or they will receive a error message and be brought back to the first prompt
+
 */
