@@ -44,6 +44,7 @@ function generatePassword() {
   } else {
     console.log("no to lowercase")
   }
+
   if (uppercasePreference) {
     characterOptions = characterOptions.concat(uppercaseArray)
     uppercasePreference = console.log(characterOptions)
@@ -64,12 +65,10 @@ function generatePassword() {
   } else {
     specialCharactersPreference = console.log("no to special characters")
   }
-  console.log(parsePasswordLength);
-  if (parsePasswordLength < 8 || parsePasswordLength > 129) {
-    alert("try again")
-  } else {
+  
+  if (parsePasswordLength) {
     for (let i = 0; i < parsePasswordLength; i++) {
-      newPasswordArray.push(characterOptions[Math.floor(Math.random() * (90 - 0))]);
+      newPasswordArray.push(characterOptions[Math.floor(Math.random() * characterOptions.length)]);
     }
     return (newPasswordArray.join('').toString());
   }
