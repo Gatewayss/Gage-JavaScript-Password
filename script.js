@@ -12,8 +12,8 @@ let numberPreference;
 let specialCharactersPreference;
 
 // if character length is correct is goes to display the other prompts but if false its brought back to the first prompt
-isCorrectLength = false;
-let isCorrectLength = checkLength(parsePasswordLength, isCorrectLength);
+let isCorrectLength = false;
+isCorrectLength = checkLength(parsePasswordLength, isCorrectLength);
 if (isCorrectLength) {
   displayPrompts();
 }
@@ -38,17 +38,17 @@ let specialCharactersArray = [..."!#$%&'()*+,-./:;<=>?@[^_`{|}~"]
 
 // Write password to the #password input
 function generatePassword() {
-  if (passwordLowerCase === true) {
+  if (lowercasePreference === true) {
     characterOptions = characterOptions.concat(lowercaseArray)
     console.log(characterOptions)
   } else {
     console.log("no to lowercase")
   }
-  if (upperCasePreference === true) {
+  if (uppercasePreference === true) {
     characterOptions = characterOptions.concat(uppercaseArray)
     upperCasePreference = console.log(characterOptions)
   } else {
-    upperCasePreference = console.log("no to uppercase")
+    uppercasePreference = console.log("no to uppercase")
   }
 
   if (numberPreference === true) {
