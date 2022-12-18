@@ -38,20 +38,20 @@ let specialCharactersArray = [..."!#$%&'()*+,-./:;<=>?@[^_`{|}~"]
 
 // Write password to the #password input
 function generatePassword() {
-  if (lowercasePreference === true) {
+  if (lowercasePreference) {
     characterOptions = characterOptions.concat(lowercaseArray)
     console.log(characterOptions)
   } else {
     console.log("no to lowercase")
   }
-  if (uppercasePreference === true) {
+  if (uppercasePreference) {
     characterOptions = characterOptions.concat(uppercaseArray)
-    upperCasePreference = console.log(characterOptions)
+    uppercasePreference = console.log(characterOptions)
   } else {
     uppercasePreference = console.log("no to uppercase")
   }
 
-  if (numberPreference === true) {
+  if (numberPreference) {
     characterOptions = characterOptions.concat(numberArray)
     numberPreference = console.log(characterOptions)
   } else {
