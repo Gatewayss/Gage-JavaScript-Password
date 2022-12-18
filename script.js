@@ -1,15 +1,17 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// password length prompt triggers the isCorrectLength function to validate the number of characters
+// password length prompt 
 let passwordLength = prompt("How many characters would you like your password to be?")
 let parsePasswordLength = parseInt(passwordLength)
 
+// the other prompt values are stored here
 let lowerCasePreference;
 let upperCasePreference;
 let numberPreference;
 let specialCharactersPreference;
 
+// if character length is correct is goes to display the other prompts but if false its brought back to the first prompt
 isCorrectLength = false;
 let isCorrectLength = checkLength(parsePasswordLength, isCorrectLength);
 if (isCorrectLength) {
@@ -26,8 +28,9 @@ function checkLength(parsePasswordLength, isCorrectLength) {
   return isCorrectLength;
 }
 
-let options = []
-let newArray = []
+// all the arrays used to generate the password
+let characterOptions = []
+let newPasswordArray = []
 let lowercaseArray = [...'abcdefghijklmnopqrstuvwxyz']
 let uppercaseArray = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ']
 let numberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -36,28 +39,28 @@ let specialCharactersArray = [..."!#$%&'()*+,-./:;<=>?@[^_`{|}~"]
 // Write password to the #password input
 function generatePassword() {
   if (passwordLowerCase === true) {
-    options = options.concat(lowercaseArray)
-    console.log(options)
+    characterOptions = characterOptions.concat(lowercaseArray)
+    console.log(characterOptions)
   } else {
     console.log("no to lowercase")
   }
   if (upperCasePreference === true) {
-    options = options.concat(uppercaseArray)
-    upperCasePreference = console.log(options)
+    characterOptions = characterOptions.concat(uppercaseArray)
+    upperCasePreference = console.log(characterOptions)
   } else {
     upperCasePreference = console.log("no to uppercase")
   }
 
   if (numberPreference === true) {
-    options = options.concat(numberArray)
-    numberPreference = console.log(options)
+    characterOptions = characterOptions.concat(numberArray)
+    numberPreference = console.log(characterOptions)
   } else {
     numberPreference = console.log("no to numbers")
   }
 
   if (specialCharactersPreference) {
-    options = options.concat(specialCharactersArray)
-    specialCharactersPreference = console.log(options);
+    characterOptions = characterOptions.concat(specialCharactersArray)
+    specialCharactersPreference = console.log(characterOptions);
   } else {
     specialCharactersPreference = console.log("no to special characters")
   }
@@ -66,9 +69,9 @@ function generatePassword() {
     alert("try again")
   } else {
     for (let i = 0; i < parsePasswordLength; i++) {
-      newArray.push(options[Math.floor(Math.random() * (90 - 0))]);
+      newPasswordArray.push(characterOptions[Math.floor(Math.random() * (90 - 0))]);
     }
-    return (newArray.join('').toString());
+    return (newPasswordArray.join('').toString());
   }
 }
 
