@@ -5,7 +5,7 @@ let passwordLength = prompt("How many characters would you like your password to
 let parsePasswordLength = parseInt(passwordLength)
 
 let lowerCasePreference;
-let passwordUpperCase;
+let upperCasePreference;
 let passwordNumbers;
 let specialCharactersPreference;
 
@@ -40,11 +40,11 @@ function generatePassword() {
   } else {
     console.log("no to lowercase")
   }
-  if (passwordUpperCase === true) {
+  if (upperCasePreference === true) {
     options = options.concat(uppercaseArray)
-    passwordUpperCase = console.log(options)
+    upperCasePreference = console.log(options)
   } else {
-    passwordUpperCase = console.log("no to uppercase")
+    upperCasePreference = console.log("no to uppercase")
   }
 
   if (passwordNumbers === true) {
@@ -86,7 +86,7 @@ generateBtn.addEventListener("click", writePassword); {
 
 function displayPrompts() {
   passwordLowerCase = confirm("Would you like lower case characters in your password??")
-  passwordUpperCase = confirm("Would you like uppercase characters in your password?")
+  upperCasePreference = confirm("Would you like uppercase characters in your password?")
   passwordNumbers = confirm("Would you like number in your password?")
   specialCharactersPreference = confirm("Would you like to add special characters?")
 }
