@@ -6,8 +6,8 @@ let passwordLength = prompt("How many characters would you like your password to
 let parsePasswordLength = parseInt(passwordLength)
 
 // the other prompt values are stored here
-let lowerCasePreference;
-let upperCasePreference;
+let lowercasePreference;
+let uppercasePreference;
 let numberPreference;
 let specialCharactersPreference;
 
@@ -90,8 +90,8 @@ generateBtn.addEventListener("click", writePassword); {
 
 // The other four display prompts 
 function displayPrompts() {
-  passwordLowerCase = confirm("Would you like lower case characters in your password??")
-  upperCasePreference = confirm("Would you like uppercase characters in your password?")
+  lowercasePreference = confirm("Would you like lower case characters in your password??")
+  uppercasePreference = confirm("Would you like uppercase characters in your password?")
   numberPreference = confirm("Would you like number in your password?")
   specialCharactersPreference = confirm("Would you like to add special characters?")
 }
