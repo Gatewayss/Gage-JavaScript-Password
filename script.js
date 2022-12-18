@@ -1,6 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+// password length prompt triggers the isCorrectLength function to validate the number of characters
 let passwordLength = prompt("How many characters would you like your password to be?")
 let parsePasswordLength = parseInt(passwordLength)
 
@@ -9,8 +10,8 @@ let upperCasePreference;
 let numberPreference;
 let specialCharactersPreference;
 
-let isCorrectLength = false;
-isCorrectLength = checkLength(parsePasswordLength, isCorrectLength);
+isCorrectLength = false;
+let isCorrectLength = checkLength(parsePasswordLength, isCorrectLength);
 if (isCorrectLength) {
   displayPrompts();
 }
@@ -84,6 +85,7 @@ generateBtn.addEventListener("click", writePassword); {
   console.log("clicked");
 }
 
+// The other four display prompts 
 function displayPrompts() {
   passwordLowerCase = confirm("Would you like lower case characters in your password??")
   upperCasePreference = confirm("Would you like uppercase characters in your password?")
