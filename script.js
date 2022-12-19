@@ -17,7 +17,7 @@ isCorrectLength = checkLength(parsePasswordLength, isCorrectLength);
 if (isCorrectLength) {
   displayPrompts();
 }
-
+*/
 function checkLength(parsePasswordLength, isCorrectLength) {
   if (parsePasswordLength < 8 || parsePasswordLength > 129) {
     alert("Refresh browser and try again! password length must be min 8 or max 129 characters")
@@ -27,7 +27,7 @@ function checkLength(parsePasswordLength, isCorrectLength) {
   }
   return isCorrectLength;
 }
-*/
+
 // all the arrays used to generate the password
 let characterOptions = []
 let newPasswordArray = []
