@@ -1,5 +1,4 @@
 // Assignment Code
-var parsePasswordLength;
 var generateBtn = document.querySelector("#generate");
 /*
 // password length prompt 
@@ -7,6 +6,7 @@ let passwordLength = prompt("How many characters would you like your password to
 let parsePasswordLength = parseInt(passwordLength)
 */
 // the other prompt values are stored here
+let parsePasswordLength;
 let lowercasePreference;
 let uppercasePreference;
 let numberPreference;
@@ -94,7 +94,6 @@ generateBtn.addEventListener("click", writePassword); {
 function displayPrompts() {
     let passwordLength = prompt("How many characters would you like your password to be?")
     parsePasswordLength = parseInt(passwordLength)
-    let parsePasswordLength = parseInt(passwordLength)
     let isCorrectLength = false;
     isCorrectLength = checkLength(parsePasswordLength, isCorrectLength);
     // if (isCorrectLength) {
