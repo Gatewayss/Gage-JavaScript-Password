@@ -21,7 +21,7 @@ function displayPrompts() {
   let passwordLength = prompt("How many characters would you like your password to be?")
   parsePasswordLength = parseInt(passwordLength)
   if (parsePasswordLength < 8 || parsePasswordLength > 129) {
-    alert("Refresh browser and try again! password length must be min 8 or max 129 characters")
+    alert("Opps! Password length must be between 8 to 128 characters. Click okay to try again.")
     displayPrompts()
   } else {
     lowercasePreference = confirm("Would you like lower case characters in your password?")
