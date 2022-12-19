@@ -1,4 +1,5 @@
 // Assignment Code
+var parsePasswordLength;
 var generateBtn = document.querySelector("#generate");
 /*
 // password length prompt 
@@ -10,6 +11,7 @@ let lowercasePreference;
 let uppercasePreference;
 let numberPreference;
 let specialCharactersPreference;
+
 /*
 // if character length is correct is goes to display the other prompts but if false its brought back to the first prompt
 let isCorrectLength = false;
@@ -91,6 +93,7 @@ generateBtn.addEventListener("click", writePassword); {
 // The other four display prompts 
 function displayPrompts() {
     let passwordLength = prompt("How many characters would you like your password to be?")
+    parsePasswordLength = parseInt(passwordLength)
     let parsePasswordLength = parseInt(passwordLength)
     let isCorrectLength = false;
     isCorrectLength = checkLength(parsePasswordLength, isCorrectLength);
