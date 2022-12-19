@@ -87,30 +87,4 @@ function displayPrompts() {
     specialCharactersPreference = confirm("Would you like to add special characters?")
   }
 }
-/* todo:
 
-click generateBtn to generate password
-prompt one is password length 8-128
-prompt to use lowercase 
-prompt to use uppercase
-prompt to use numbers and or special characters
-once all the prompts are done a password should generate 
-it can be displayed as alert or in the text box 
-
-todo part 2:
-
-create a quit function if they don't enter the correct amount of characters
-store the new password in a variable that can be used outside of the generate password function.
-make the outcome a string 
-add that variable to the click function so it displays on screen 
-clean and test the code 
-
-todo part 3
-
-watch demo on zoom and compare,
-when the button is clicked THEN the prompts begin,
-ensure each type of character is in the password
-make a function where the user has to pick at least one 
-of the options for characters or they will receive a error message and be brought back to the first prompt
-
-*/
