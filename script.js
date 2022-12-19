@@ -20,7 +20,7 @@ let specialCharactersArray = [..."!#$%&'()*+,-./:;<=>?@[^_`{|}~"]
 function displayPrompts() {
   let passwordLength = prompt("How many characters would you like your password to be?")
   parsePasswordLength = parseInt(passwordLength)
-  if (parsePasswordLength < 8 || parsePasswordLength > 129) {
+  if (parsePasswordLength < 8 || parsePasswordLength > 128) {
     alert("Opps! Password length must be between 8 to 128 characters. Click okay to try again.")
     displayPrompts()
   } else {
