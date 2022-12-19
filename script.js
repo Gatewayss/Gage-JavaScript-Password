@@ -81,7 +81,7 @@ function displayPrompts() {
     alert("Refresh browser and try again! password length must be min 8 or max 129 characters")
     displayPrompts()
   } else {
-    lowercasePreference = confirm("Would you like lower case characters in your password??")
+    lowercasePreference = confirm("Would you like lower case characters in your password?")
     uppercasePreference = confirm("Would you like uppercase characters in your password?")
     numberPreference = confirm("Would you like number in your password?")
     specialCharactersPreference = confirm("Would you like to add special characters?")
