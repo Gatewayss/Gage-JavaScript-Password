@@ -1,3 +1,10 @@
-# Javascript-password
+# Javascript Password Generator 
 
-i changed something
+## Description
+
+## Why
+
+## links
+
+
+## License 
