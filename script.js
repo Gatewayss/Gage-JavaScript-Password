@@ -12,23 +12,9 @@ let uppercasePreference;
 let numberPreference;
 let specialCharactersPreference;
 
-/*
+
 // if character length is correct is goes to display the other prompts but if false its brought back to the first prompt
-let isCorrectLength = false;
-isCorrectLength = checkLength(parsePasswordLength, isCorrectLength);
-if (isCorrectLength) {
-  displayPrompts();
-}
-*/
-function checkLength(parsePasswordLength, isCorrectLength) {
-  if (parsePasswordLength < 8 || parsePasswordLength > 129) {
-    alert("Refresh browser and try again! password length must be min 8 or max 129 characters")
-    isCorrectLength = false;
-  } else {
-    isCorrectLength = true;
-  }
-  return isCorrectLength;
-}
+
 
 // all the arrays used to generate the password
 let characterOptions = []
@@ -82,30 +68,25 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword); {
-  console.log("clicked");
-}
+generateBtn.addEventListener("click", writePassword);
 
 // The other four display prompts 
 function displayPrompts() {
-    let passwordLength = prompt("How many characters would you like your password to be?")
-    parsePasswordLength = parseInt(passwordLength)
-    let isCorrectLength = false;
-    isCorrectLength = checkLength(parsePasswordLength, isCorrectLength);
-    // if (isCorrectLength) {
-    //   displayPrompts();
-    // }
+  let passwordLength = prompt("How many characters would you like your password to be?")
+  parsePasswordLength = parseInt(passwordLength)
+  if (parsePasswordLength < 8 || parsePasswordLength > 129) {
+    alert("Refresh browser and try again! password length must be min 8 or max 129 characters")
+    displayPrompts()
+  } else {
     lowercasePreference = confirm("Would you like lower case characters in your password??")
     uppercasePreference = confirm("Would you like uppercase characters in your password?")
     numberPreference = confirm("Would you like number in your password?")
     specialCharactersPreference = confirm("Would you like to add special characters?")
   }
-
-
+}
 /* todo:
 
 click generateBtn to generate password
