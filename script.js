@@ -37,7 +37,7 @@ function generatePassword() {
     characterOptions = characterOptions.concat(lowercaseArray)
     console.log(characterOptions)
   } else {
-    console.log("no to lowercase")
+    lowercasePreference = console.log("no to lowercase")
   }
   if (uppercasePreference) {
     characterOptions = characterOptions.concat(uppercaseArray)
