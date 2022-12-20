@@ -1,14 +1,14 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// password preferences variables
+// variables that store the users prompts answers  
 let parsePasswordLength;
 let lowercasePreference;
 let uppercasePreference;
 let numberPreference;
 let specialCharactersPreference;
 
-// all the arrays used to generate the password
+// arrays used to generate the password
 let characterOptions = []
 let newPasswordArray = []
 let lowercaseArray = [...'abcdefghijklmnopqrstuvwxyz']
@@ -16,7 +16,8 @@ let uppercaseArray = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ']
 let numberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 let specialCharactersArray = [..."!#$%&'()*+,-./:;<=>?@[^_`{|}~"]
 
-// displays the prompts 
+// displayPrompts checks if the character length fits the 8-128 character limit
+// if so then continues to display the other prompts 
 function displayPrompts() {
   let passwordLength = prompt("How many characters would you like your password to be?")
   parsePasswordLength = parseInt(passwordLength)
@@ -31,7 +32,8 @@ function displayPrompts() {
   }
 }
 
-// creates the password
+// generatePassword() and adds the desired arrays/characters 
+// to a new array called characterOptions 
 function generatePassword() {
   if (lowercasePreference) {
     characterOptions = characterOptions.concat(lowercaseArray)
@@ -57,10 +59,14 @@ function generatePassword() {
   } else {
     specialCharactersPreference = console.log("no to special characters")
   }
+  // newPassword array picks random characters fromm the characterOptions array
+  // to generate the password 
   if (parsePasswordLength) {
     for (let i = 0; i < parsePasswordLength; i++) {
       newPasswordArray.push(characterOptions[Math.floor(Math.random() * characterOptions.length)]);
     }
+    // newPassword array is then made into a string and  
+    // becomes the users password
     return (newPasswordArray.join('').toString());
   }
 }
