@@ -11,10 +11,10 @@ let specialCharactersPreference;
 // arrays used to generate the password
 let characterOptions = []
 let newPasswordArray = []
-let lowercaseArray = [...'abcdefghijklmnopqrstuvwxyz']
-let uppercaseArray = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ']
-let numberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-let specialCharactersArray = [..."!#$%&'()*+,-./:;<=>?@[^_`{|}~"]
+const lowercaseArray = [...'abcdefghijklmnopqrstuvwxyz']
+const uppercaseArray = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ']
+const numberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+const specialCharactersArray = [..."!#$%&'()*+,-./:;<=>?@[^_`{|}~"]
 
 // displayPrompts checks if the character length fits the 8-128 character limit
 // if so then continues to display the other prompts 
