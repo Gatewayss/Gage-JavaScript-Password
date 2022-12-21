@@ -34,6 +34,7 @@ function displayPrompts() {
     }
   }
 }
+
 /* using the variables stored from displayPrompts() 
 the desired characters will add their array contents to characterOptions */
 function generatePassword() {
