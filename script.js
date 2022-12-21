@@ -29,9 +29,12 @@ function displayPrompts() {
     uppercasePreference = confirm("Would you like uppercase characters in your password?")
     numberPreference = confirm("Would you like number in your password?")
     specialCharactersPreference = confirm("Would you like to add special characters?")
+    if (!lowercasePreference && !uppercasePreference && !numberPreference && !specialCharactersPreference) {
+      alert("Opps! You must select at least one character type!");
+      displayPrompts()
+    }
   }
 }
-
 // generatePassword() and adds the desired arrays/characters 
 // to a new array called characterOptions 
 function generatePassword() {
