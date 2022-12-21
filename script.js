@@ -1,14 +1,13 @@
-// Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// variables that store the users prompts answers  
+// variables that store from displayPrompts()  
 let parsePasswordLength;
 let lowercasePreference;
 let uppercasePreference;
 let numberPreference;
 let specialCharactersPreference;
 
-// arrays used to generate the password
+// arrays used to generate the users password
 let characterOptions = []
 let newPasswordArray = []
 const lowercaseArray = [...'abcdefghijklmnopqrstuvwxyz']
@@ -16,8 +15,8 @@ const uppercaseArray = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ']
 const numberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 const specialCharactersArray = [..."!#$%&'()*+,-./:;<=>?@[^_`{|}~"]
 
-// displayPrompts checks if the character length fits the 8-128 character limit
-// if so then continues to display the other prompts 
+/* displayPrompts() checks if the user followed the password character and types limit 
+if so the prompt values are stored and used in generatePassword() */
 function displayPrompts() {
   let passwordLength = prompt("How many characters would you like your password to be?")
   parsePasswordLength = parseInt(passwordLength)
@@ -35,8 +34,8 @@ function displayPrompts() {
     }
   }
 }
-// generatePassword() and adds the desired arrays/characters 
-// to a new array called characterOptions 
+/* using the variables stored from displayPrompts() 
+the desired characters will add their array contents to characterOptions */
 function generatePassword() {
   if (lowercasePreference) {
     characterOptions = characterOptions.concat(lowercaseArray)
@@ -62,19 +61,20 @@ function generatePassword() {
   } else {
     specialCharactersPreference = console.log("no to special characters")
   }
-  // newPassword array picks random characters fromm the characterOptions array
-  // to generate the password 
+  /* newPassword array picks random characters fromm the characterOptions array
+  to generate the password */
   if (parsePasswordLength) {
     for (let i = 0; i < parsePasswordLength; i++) {
       newPasswordArray.push(characterOptions[Math.floor(Math.random() * characterOptions.length)]);
     }
-    // newPassword array is then made into a string and  
-    // becomes the users password
+    /* newPassword array is then made into a string and  
+    becomes the users password */
     return (newPasswordArray.join('').toString());
   }
 }
 
-// displays the text for the password 
+/* onclick writePassword() executes displayPrompts() first 
+then it displays password in text box */
 function writePassword() {
   displayPrompts()
   var password = generatePassword();
