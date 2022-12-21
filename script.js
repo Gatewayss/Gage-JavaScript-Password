@@ -39,28 +39,16 @@ the desired characters will add their array contents to characterOptions */
 function generatePassword() {
   if (lowercasePreference) {
     characterOptions = characterOptions.concat(lowercaseArray);
-    console.log(characterOptions);
-  } else {
-    lowercasePreference = console.log("no to lowercase");
-  }
+  } 
   if (uppercasePreference) {
     characterOptions = characterOptions.concat(uppercaseArray);
-    uppercasePreference = console.log(characterOptions);
-  } else {
-    uppercasePreference = console.log("no to uppercase");
-  }
+  } 
   if (numberPreference) {
     characterOptions = characterOptions.concat(numberArray);
-    numberPreference = console.log(characterOptions);
-  } else {
-    numberPreference = console.log("no to numbers");
-  }
+  } 
   if (specialCharactersPreference) {
     characterOptions = characterOptions.concat(specialCharactersArray);
-    specialCharactersPreference = console.log(characterOptions);
-  } else {
-    specialCharactersPreference = console.log("no to special characters");
-  }
+  } 
   /* newPassword array picks random characters fromm the characterOptions array
   to generate the password */
   if (parsePasswordLength) {
